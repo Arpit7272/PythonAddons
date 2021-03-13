@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>
+            Whatsapp_Replier
+        </title>
+       
+        <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.3.2.js"></script>
+<script src="http://malsup.github.io/jquery.blockUI.js"></script>
+        
+        
+    </head>
+    <body>
+        <h2>Sends whatsapp message to a particular number at given IST time </h2>
+        <h4>Note: <i>***This function will not work if the browser's window is minimised or you are not login to WhatsApp web**</i></h4>
+        <form method="post" action='/reply/' id='form'>
+            {%csrf_token%}
+            <br></br>
+            <label for="Mobile">Mobile:</label>
+            <input type="tel" id="Mobile" name="number" pattern="^[6-9]{1}[0-9]{9}]$" required>
+            <br></br>
+            <label for="Text">Text:</label>
+            <input type ='textarea' id='Text' name='text'>
+            <br></br>
+            <label for="Time">Time:</label>
+            <input type="time"  id ='Time' name="time" required>
+            <br></br>
+            <input type ='submit' id ='submit'>
+        </form>
+        <script>
+        $(document).ready(function() { 
+            $('#submit').click(function() { 
+                $.blockUI({ 
+                    message: '<h1> Whatsapp will open before 20 seconds of selected time and message will be delivered</h1>',
+                    css: { 
+                    border: 'none', 
+                    padding: '15px', 
+                    backgroundColor: '#000', 
+                    '-webkit-border-radius': '10px', 
+                    '-moz-border-radius': '10px', 
+                    opacity: .5, 
+                    color: '#fff' 
+                } }); 
+         
+                // setTimeout($.unblockUI);
+
+            }); 
+        }); 
+        </script>
+        
+    </body>
+</html>
