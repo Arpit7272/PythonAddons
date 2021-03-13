@@ -24,7 +24,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'SendReply/templates')
 SECRET_KEY = '=&n)b^*f+9=0(#64-$ga)3d63svi9$ayp^-k=e+p+k9j*^*28^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
